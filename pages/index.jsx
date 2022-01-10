@@ -1,9 +1,14 @@
 import Head from "next/head";
 import Sidebar from "../components/sidebar";
+import Login from "../components/login";
 import Feed from "../components/feed";
 import { getProviders, getSession, useSession } from "next-auth/react";
 
-export default function Home() {
+export default function Home({ trendingResults, followResults, providers }) {
+  const { data: session } = useSession();
+
+  if (!session) return <Login providers={providers} />;
+
   return (
     <div>
       <Head>
