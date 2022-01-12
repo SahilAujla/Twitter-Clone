@@ -80,7 +80,7 @@ const Input = () => {
 
   return (
     <div
-      className={`border-b border-gray-700 p-3 flex space-x-3 overflow-y-scroll ${
+      className={`border-b border-gray-700 p-3 flex space-x-3 overflow-y-scroll scrollbar-hide ${
         loading && "opacity-60"
       }`}
     >
@@ -96,7 +96,7 @@ const Input = () => {
             onChange={(e) => setInput(e.target.value)}
             rows="2"
             placeholder="What's happening?"
-            className="bg-transparent outline-none text-[#d9d9d9] text-lg placeholder:text-gray-500 tracking-wide w-full min-h-[50px]"
+            className="bg-transparent outline-none text-[#d9d9d9] text-lg placeholder:text-gray-500 tracking-wide w-full min-h-[50px] scrollbar-hide"
           />
 
           {selectedFile && (

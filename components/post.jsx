@@ -38,6 +38,22 @@ function Post({ id, post, postPage }) {
   const [likes, setLikes] = useState([]);
   const router = useRouter();
 
+  useEffect(() => {
+    const unsubscribe = onSnapshot(
+      query(
+        collection(db, "posts", id, "comments"),
+        orderBy("timestamp", "desc")
+      ),
+      (snapshot) => {
+        setComments(snapshot.docs);
+      }
+    );
+
+    return () => {
+      unsubscribe();
+    };
+  }, [id]);
+
   useEffect(
     () =>
       onSnapshot(collection(db, "posts", id, "likes"), (snapshot) => {
