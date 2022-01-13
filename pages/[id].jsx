@@ -18,6 +18,7 @@ import { ArrowLeftIcon } from "@heroicons/react/solid";
 import Head from "next/head";
 import Login from "../components/login";
 import Comment from "../components/comment";
+import Widgets from '../components/widgets';
 
 const PostPage = ({ trendingResults, followResults, providers }) => {
   const router = useRouter();
@@ -87,8 +88,7 @@ const PostPage = ({ trendingResults, followResults, providers }) => {
           )}
         </div>
 
-        {/* Widgets */}
-
+        <Widgets trendingResults={trendingResults} followResults={followResults} />
         {isOpen && <Modal />}
       </main>
     </div>
