@@ -10,15 +10,15 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import { modalState } from "../atoms/modalAtom";
-import Modal from "../components/Modal";
-import Sidebar from "../components/Sidebar";
-import Post from "../components/Post";
+import Modal from "../components/modal";
+import Sidebar from "../components/sidebar";
+import Post from "../components/post";
 import { db } from "../firebase";
 import { ArrowLeftIcon } from "@heroicons/react/solid";
 import Head from "next/head";
 import Login from "../components/login";
 import Comment from "../components/comment";
-import Widgets from '../components/widgets';
+import Widgets from "../components/widgets";
 
 const PostPage = ({ trendingResults, followResults, providers }) => {
   const router = useRouter();
@@ -88,7 +88,10 @@ const PostPage = ({ trendingResults, followResults, providers }) => {
           )}
         </div>
 
-        <Widgets trendingResults={trendingResults} followResults={followResults} />
+        <Widgets
+          trendingResults={trendingResults}
+          followResults={followResults}
+        />
         {isOpen && <Modal />}
       </main>
     </div>
