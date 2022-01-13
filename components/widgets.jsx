@@ -29,28 +29,27 @@ function Widgets({ trendingResults, followResults }) {
       <div className="text-[#d9d9d9] space-y-3 bg-[#15181c] pt-2 rounded-xl w-11/12 xl:w-11/12">
         <h4 className="font-bold text-xl px-4">Who to follow</h4>
         {followResults.map((result, index) => (
-          <div
-            key={index}
-            className="hover:bg-white hover:bg-opacity-[0.03] px-4 py-3 cursor-pointer transition duration-200 ease-out flex items-center"
-          >
-            <Image
-              src={result.userImg}
-              width={50}
-              height={50}
-              objectFit="cover"
-              className="rounded-full"
-              alt=""
-            />
-            <div className="ml-4 leading-5 group">
-              <h4 className="font-bold group-hover:underline">
-                {result.username}
-              </h4>
-              <h5 className="text-gray-500 text-[15px]">{result.tag}</h5>
+          <a key={index} href={result.twitter} target="_blank" rel="noreferrer">
+            <div className="hover:bg-white hover:bg-opacity-[0.03] px-4 py-3 cursor-pointer transition duration-200 ease-out flex items-center">
+              <Image
+                src={result.img}
+                width={50}
+                height={50}
+                objectFit="cover"
+                className="rounded-full"
+                alt=""
+              />
+              <div className="ml-4 leading-5 group">
+                <h4 className="font-bold group-hover:underline">
+                  {result.name}
+                </h4>
+                <h5 className="text-gray-500 text-[15px]">{result.tag}</h5>
+              </div>
+              <button className="ml-auto bg-white text-black rounded-full font-bold text-sm py-1.5 px-3.5">
+                Follow
+              </button>
             </div>
-            <button className="ml-auto bg-white text-black rounded-full font-bold text-sm py-1.5 px-3.5">
-              Follow
-            </button>
-          </div>
+          </a>
         ))}
         <button className="hover:bg-white hover:bg-opacity-[0.03] px-4 py-3 cursor-pointer transition duration-200 ease-out flex items-center justify-between w-full text-[#1d9bf0] font-light">
           Show more

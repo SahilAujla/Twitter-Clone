@@ -37,10 +37,10 @@ export default function Home({ trendingResults, followResults, providers }) {
 }
 
 export async function getServerSideProps(context) {
-  const trendingResults = await fetch("https://jsonkeeper.com/b/NKEV").then(
+  const trendingResults = await fetch("https://jsonkeeper.com/b/AAJO").then(
     (res) => res.json()
   );
-  const followResults = await fetch("https://jsonkeeper.com/b/WWMJ").then(
+  const followResults = await fetch("https://jsonkeeper.com/b/8OSD").then(
     (res) => res.json()
   );
   const providers = await getProviders();
@@ -55,5 +55,3 @@ export async function getServerSideProps(context) {
     },
   };
 }
-
-// Add favicon
