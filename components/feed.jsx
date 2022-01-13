@@ -4,7 +4,6 @@ import Input from "./Input";
 import { onSnapshot, collection, query, orderBy } from "@firebase/firestore";
 import { db } from "../firebase";
 import Post from "./post";
-import { useSession } from "next-auth/react";
 
 const Feed = () => {
   const [posts, setPosts] = useState([]);
